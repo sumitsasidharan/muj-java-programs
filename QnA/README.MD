@@ -193,19 +193,26 @@ The lifecycle of a Servlet in Java refers to the various stages it goes through 
 
 **Initialization:**
 • Once loaded, the container creates a single instance of the Servlet class.
+
 • The init(ServletConfig config) method of the Servlet is invoked. This method is used for one-time initialization tasks like establishing database connections or loading configuration files. The ServletConfig object provides access to Servlet configuration details.
 
 **Service Requests:**
 
 • This is the primary operational phase.
+
 • Whenever a client makes a request that maps to the Servlet, the container calls the service(ServletRequest request, ServletResponse response) method of the Servlet instance.
+
 • The service method examines the HTTP request method (GET, POST, etc.) and dispatches the request to appropriate helper methods within the Servlet class to handle the specific logic.
+
 • The Servlet interacts with the request object to access data sent by the client (parameters, headers) and with the response object to generate the response content (data, HTML, etc.).
 
 **Destruction:**
 • The Servlet container eventually destroys the Servlet instance when it's no longer needed. This typically happens when the web application is shut down or unloaded.
+
 • The destroy() method of the Servlet is invoked before destruction, allowing for any cleanup tasks like closing database connections or releasing resources.
-Garbage Collection:
+
+**Garbage Collection:**
+
 • After destruction, the Java Virtual Machine's garbage collector reclaims the memory used by the Servlet object.
 
 **Life Cycle Of A Thread**
@@ -213,9 +220,11 @@ Garbage Collection:
 Through the execution process of a thread, it is said to exist in various stages:
 
 • Ready to run stage - when a thread is ready to be processed by the CPU or, in other words, when it gets CPU time.
+
 • Running stage - when the thread is being executed.
-• The suspended stage - indicate temporary inactivation of the thread's execution due
-to the CPU tending to another thread. It also sometimes indicates that the thread is in execution.
+
+• The suspended stage - indicate temporary inactivation of the thread's execution due to the CPU tending to another thread. It also sometimes indicates that the thread is in execution.
+
 • The blocked stage - when the thread has run out of resources for its execution and is waiting for those resources.
-• Terminated stage - when the thread execution is halted because of unusual erroneous events, or the thread has
-entirely executed by the program.
+
+• Terminated stage - when the thread execution is halted because of unusual erroneous events, or the thread has entirely executed by the program.
