@@ -132,24 +132,33 @@ A method can declare that it might throw one or more exceptions using the throws
 
 ### 3. List various features of Java.
 
-Simple
-Java is easy for programmers to learn and use effectively. For an experienced C++ programmer, learning Java will require very little effort because Java inherits the C/C++ syntax and many of the object- oriented features of C++. Expressiveness is more in Java. Most of the complex or confusing features in C++ are removed in Java like pointers etc. or implemented in a cleaner, more approachable manner.
+**Simple**: Java is easy for programmers to learn and use effectively. For an experienced C++ programmer, learning Java will require very little effort because Java inherits the C/C++ syntax and many of the object- oriented features of C++. Expressiveness is more in Java. Most of the complex or confusing features in C++ are removed in Java like pointers etc. or implemented in a cleaner, more approachable manner.
 
-Secure
-Java forces programmers to handle unexpected errors. This ensures that Java programs are robust (reliable), bug free and do not crash. Due to strong type-checking done by Java on the user’s machine, any changes to the program are tagged as error and the program will not execute. Therefore Java is secured. The fact that a Java program is interpreted also helps to make it secure. Because the execution of every Java program is under the control of the JVM, the JVM can contain the program and prevent it from generating side effects outside the system. Java provides data security through encapsulation.
+**Secure**: Java forces programmers to handle unexpected errors. This ensures that Java programs are robust (reliable), bug free and do not crash. Due to strong type-checking done by Java on the user’s machine, any changes to the program are tagged as error and the program will not execute. Therefore Java is secured. The fact that a Java program is interpreted also helps to make it secure. Because the execution of every Java program is under the control of the JVM, the JVM can contain the program and prevent it from generating side effects outside the system. Java provides data security through encapsulation.
 
 JVM that executes the bytecode contains bytecode verifiers that ensure that the bytecode has not been tampered with.
 
 Besides the basic security features within the language framework, libraries and frameworks are available in Java that provided cryptographic capabilities. Java also contains tools like keytools, and jarsigners that help in secure communications.
 
-Portable
-The key factor that allows Java to solve both the security and the portability problems is that the output of a Java compiler is not executable code. Rather, it is bytecode. The fact that a Java program is executed by the JVM helps to solve the major problems associated with the portability of programs over the Internet. Remember, although the details of the JVM will differ fromplatform to platform, all interpret the same Java bytecode. Due to the bytecode compilation process and interpretation by a browser, Java programs can be executed on a variety of hardware and operating systems. The Java interpreter can execute Java code directly on any machine on which a Java interpreter has been installed. Hence, Java code is portable.
+**Portable**: The key factor that allows Java to solve both the security and the portability problems is that the output of a Java compiler is not executable code. Rather, it is bytecode. The fact that a Java program is executed by the JVM helps to solve the major problems associated with the portability of programs over the Internet. Remember, although the details of the JVM will differ fromplatform to platform, all interpret the same Java bytecode. Due to the bytecode compilation process and interpretation by a browser, Java programs can be executed on a variety of hardware and operating systems. The Java interpreter can execute Java code directly on any machine on which a Java interpreter has been installed. Hence, Java code is portable.
 
-Object-Oriented
-Java is also defined by a paradigm that almost “Everything is an Object” and the pragmatists’ model – "stay out of my way". All program code and data reside within objects and classes. Java comes with an extensive set of classes, arranged in packages that can be used in your programs through inheritance. The object model in Java is simple and easy to extend. It supports all the features of object oriented model like: Encapsulation, Inheritance, Polymorphism and Abstraction. Only simple data types such as integers, are kept as high-performance non-objects.
+**Object-Oriented**: Java is also defined by a paradigm that almost “Everything is an Object” and the pragmatists’ model – "stay out of my way". All program code and data reside within objects and classes. Java comes with an extensive set of classes, arranged in packages that can be used in your programs through inheritance. The object model in Java is simple and easy to extend. It supports all the features of object oriented model like: Encapsulation, Inheritance, Polymorphism and Abstraction. Only simple data types such as integers, are kept as high-performance non-objects.
 
-Multithreaded
+**Multithreaded**: Java has built-in support for multithreading, which allows multiple threads to run concurrently within a program. This makes it easy to build applications that can perform several tasks simultaneously, such as in GUI or server-side applications.
+
 Java supports multithreaded programming, which allows you to write programs to meet the real-world requirement for creating interactive as well as networked programs. Java supports multithreading which is not supported by C and C++. A thread is a light weight process. Multithreading increases CPU efficiency. A program can be divided into several threads and each thread can be executed concurrently or in parallel with the other threads. An example of a real world requirement is - While we are listening to music, we can write in a word document or play a game at the same time. The Java run-time system provides solution for multi-process synchronization and enables you to construct smoothly running interactive systems. Java's easy-to-use approach to multithreading allows you to think about the specific behavior of your program, not the multitasking subsystem. Multithreading is the ability of an application to perform multiple tasks at the same time. You can create multithreading programs using Java.
+
+**Architecture-Neutral**: Bytecode helps Java to achieve portability. One of the goals during for Java was "write once; run anywhere, anytime, forever”. Bytecode can be executed on computers having any kind of operating system or any kind of CPU. Since Java applications can run on any kind of CPU, Java is architecture-neutral.
+
+**Distributed**: Java is designed with networked applications in mind, offering extensive support for distributed computing. Java's standard library includes APIs like Remote Method Invocation (RMI) and support for protocols like HTTP and FTP, making it easy to build distributed applications.
+
+**Rich Standard Library**: Java provides a vast standard library (Java API), which includes classes and methods for tasks like data structures, networking, I/O, threading, and more. This rich set of pre-built classes speeds up development and reduces the need for third-party libraries.
+
+**Garbage Collection**: Java automatically manages memory through its garbage collection mechanism, which automatically deletes objects that are no longer in use, reducing the likelihood of memory leaks and other memory-related issues.
+
+**Scalable**: Java is suitable for both small-scale applications and large enterprise systems. It offers tools and frameworks that support scalability, such as Enterprise JavaBeans (EJB) for enterprise-level development.
+
+
 
 ### 4. Explain the importance of byte code in Java.
 
@@ -180,26 +189,26 @@ Bytecode ensures that a Java application behaves consistently across different e
 
 The lifecycle of a Servlet in Java refers to the various stages it goes through from creation to destruction, managed by the Servlet container. Here's a breakdown of the key phases:
 
-Loading: When the web container receives a client request that maps to a particular Servlet, it first loads the Servlet class. This involves locating the class file and creating a class object in memory.
+**Loading:** When the web container receives a client request that maps to a particular Servlet, it first loads the Servlet class. This involves locating the class file and creating a class object in memory.
 
-Initialization:
+**Initialization:**
 • Once loaded, the container creates a single instance of the Servlet class.
 • The init(ServletConfig config) method of the Servlet is invoked. This method is used for one-time initialization tasks like establishing database connections or loading configuration files. The ServletConfig object provides access to Servlet configuration details.
 
-Service Requests:
+**Service Requests:**
 
 • This is the primary operational phase.
 • Whenever a client makes a request that maps to the Servlet, the container calls the service(ServletRequest request, ServletResponse response) method of the Servlet instance.
 • The service method examines the HTTP request method (GET, POST, etc.) and dispatches the request to appropriate helper methods within the Servlet class to handle the specific logic.
 • The Servlet interacts with the request object to access data sent by the client (parameters, headers) and with the response object to generate the response content (data, HTML, etc.).
 
-Destruction:
+**Destruction:**
 • The Servlet container eventually destroys the Servlet instance when it's no longer needed. This typically happens when the web application is shut down or unloaded.
 • The destroy() method of the Servlet is invoked before destruction, allowing for any cleanup tasks like closing database connections or releasing resources.
 Garbage Collection:
 • After destruction, the Java Virtual Machine's garbage collector reclaims the memory used by the Servlet object.
 
-Life Cycle Of A Thread
+**Life Cycle Of A Thread**
 
 Through the execution process of a thread, it is said to exist in various stages:
 
